@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ja">
+ <head>
+  <meta charset="SHIFT-JIS">
+  <title>ワンクリック詐欺サイト</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  
+  
+  <style>
+  .custom-box {
+  width:95%;
+  margin: 30px 0 30px 20px; /* 上・右・下・左の順。左に20pxだけ余白をつけて左寄せ */
+  border-radius: 15px;
+  background-color: #d9534f;
+  color: #fff;
+  padding: 20px;
+  }
+
+  /* スマホなど画面幅が768px以下のとき */
+  @media (max-width: 768px) {
+  .custom-box {
+    width: 90%;              /* スマホでは幅を広く */
+    margin: 20px 0 20px 10px; /* 左に少しだけ余白 */
+  }
+  }
+  </style>
+  <style>
+  /* ボックス全体 */
+  .box {
+    width: 60%;               /* ← ページ幅の60%など */
+    max-width: 500px;         /* ← 最大幅 */
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #aaa;
+    border-radius: 10px;
+    background: #f9f9f9;
+    text-align: center;
+  }
+
+  /* ローディングバー */
+  .loading-bar {
+    width: 100%;              /* ← ボックスの幅に自動で合わせる！ */
+    height: 20px;
+    background: #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 10px;
+  }
+
+  .loading-bar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 50%;
+    height: 100%;
+    background: black;
+    animation: loading 1.2s infinite linear;
+  }
+
+  @keyframes loading {
+    0% { left: -50%; }
+    100% { left: 100%; }
+  }
+  </style>
+  <script src="script.js"></script>
+</head>
+ </head>
+ <body>
+  <div class="jumbotron" style="background-color: #ffff66;">
+   <div class="container">
+    <h1><strong>登録完了</strong></h1>
+    <p>お客様の登録が正式に完了しました</p>
+    <p class="text-danger">期限以内に<strong>198000円</strong>お支払いください</p>
+    <div class="custom-box">
+     <h3 class="text-center" id="countdown"></h3>
+     <div class="loading-bar"></div>
+    </div>
+    <p class="text-danger">お支払い頂けない場合は<strong>法的処置</strong>を取らさせていただきますのでご注意ください</p>
+   </div>
+  </div>
+  <div class="container"> 
+   <h2>お客様情報</h2>
+    <table class="table table-striped">
+     <tr>
+      <td>登録日時</td>
+      <td id="datetime"></td>
+     </tr>
+     <tr>
+      <td>端末情報</td>
+      <td id="info"></td>
+     </tr>
+    </table>
+   <h2>お問い合わせ先</h2>
+   <table class="table table-striped">
+    <tr>
+     <td>電話番号</td>
+     <td>012-000-0000</td>
+    </tr>
+    <tr>
+     <td>メールアドレス</td>
+     <td>info@index.corn</td>
+    </tr>
+   </table>
+   <h2>お振込先</h2>
+   <table class="table table-striped">
+    <tr>
+     <td>銀行名（銀行コード）</td>
+     <td>西中銀行（1341）</td>
+    </tr>
+    <tr>
+     <td>支店名（支店コード）</td>
+     <td>赤色支店（465）</td>
+    </tr>
+    <tr>
+     <td>種別</td>
+     <td>普通預金</td>
+    </tr>
+    <tr>
+     <td>口座番号</td>
+     <td>0125241</td>
+    </tr>
+   </table>
+  </div>
+ </body>
+</html>
